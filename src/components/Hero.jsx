@@ -37,13 +37,13 @@ const Hero = () => {
           </button>
 
           <button className='w-[155px] h-[62px] flex items-center justify-center p-[12px_16px_15px_16px] gap-[10px] rounded-[5px] bg-[#00bf69] text-white'>
-            <img src={Android} alt="google" />
-            <div className='text-left'>
-              <span className='block text-[12px] leading-[12px]'>Get it on</span>
-              <span className='block text-[16px] lg:text-[18px] font-normal text-nowrap'>Google Store</span>
-            </div>
-          </button>
-        
+  <img src={Android} alt="google" />
+  <div className='text-left'>
+    <span className='block text-[12px] leading-[12px] whitespace-nowrap'>Get it on</span>
+    <span className='block text-[16px] lg:text-[18px] font-normal whitespace-nowrap'>Google Store</span>
+  </div>
+</button>
+
         </div>
       </div>
 

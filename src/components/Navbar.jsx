@@ -9,35 +9,37 @@ const Navbar = () => {
   const handleToggle = () => {
     setOpen(!open);
   }
+
   return (
-    <nav className='sticky top-0 w-screen h-auto bg-white'>
-        <div className='max-w-[1366px] max-h-[152px] mx-auto bg-white flex justify-between items-center p-8 relative'>
-            {/*Logo*/}
-            <div className='w-[117px] h-[43px] top-[54px] left-[113px] flex justify-start items-center gap-2'>
-                <img className='w-[36.52px] h-[42px]' src={Logo} alt="logo" />
-                <h1 className='text-[#00070f] text-[30px] font-semibold font-poppins leading-normal'>ear1</h1>
-            </div>
-
-            <ul className='justify-between items-center gap-10 hidden md:flex'>
-                <li><a className='font-poppins text-base text-[#6a6a70] leading-[18.75px]' href="#about">About</a></li>
-                <li><a className='font-poppins text-base text-[#6a6a70] leading-[18.75px]' href="#faq">FAQs</a></li>
-                <li><a className='font-poppins text-base text-[#6a6a70] leading-[18.75px]' href="#contact">Contact us</a></li>
-            </ul>
-
-            {/**Toggle navigation */}
-            <div onClick={handleToggle} className='text-2xl cursor-pointer md:hidden'>
-            {open ? < MdClose /> :  <BiMenuAltLeft /> }
-            </div>
-
-            {/*Mobile screens*/}             
-            <ul className={`justify-between items-center gap-10 absolute top-16 left-0 bg-white w-screen flex flex-col py-12 duration-700 z-[1] transition-all ${open ? 'top-20' : 'top-[-450px]'}`}>
-                <li><a className='font-poppins text-base text-[#6a6a70] leading-[18.75px]' href="#about">About</a></li>
-                <li><a className='font-poppins text-base text-[#6a6a70] leading-[18.75px]' href="#faq">FAQs</a></li>
-                <li><a className='font-poppins text-base text-[#6a6a70] leading-[18.75px]' href="#contact">Contact us</a></li>
-            </ul>
+    <nav className='sticky top-0 w-full bg-white z-50'>
+      <div className='max-w-[1366px] mx-auto flex justify-between items-center p-4 md:p-8'>
+        {/* Logo */}
+        <div className='flex items-center'>
+          <img className='w-[36px] h-[42px]' src={Logo} alt="logo" />
+          <h1 className='text-[#00070f] text-2xl md:text-3xl font-semibold ml-2 font-poppins'>ear1</h1>
         </div>
+
+        {/* Full Menu for Tablets and Larger Screens */}
+        <ul className='hidden md:flex space-x-8'>
+          <li><a className='font-poppins text-lg text-[#6a6a70] hover:text-black transition' href="#about">About</a></li>
+          <li><a className='font-poppins text-lg text-[#6a6a70] hover:text-black transition' href="#faq">FAQs</a></li>
+          <li><a className='font-poppins text-lg text-[#6a6a70] hover:text-black transition' href="#contact">Contact us</a></li>
+        </ul>
+
+        {/* Hamburger Menu for Mobile */}
+        <div className='md:hidden text-3xl cursor-pointer' onClick={handleToggle}>
+          {open ? <MdClose /> : <BiMenuAltLeft />}
+        </div>
+
+        {/* Mobile Menu */}
+        <ul className={`absolute top-14 left-0 w-full bg-white flex flex-col items-center space-y-6 py-10 transition-all duration-300 ease-in-out md:hidden ${open ? 'block' : 'hidden'}`}>
+          <li><a className='font-poppins text-lg text-[#6a6a70] hover:text-black transition' href="#about" onClick={handleToggle}>About</a></li>
+          <li><a className='font-poppins text-lg text-[#6a6a70] hover:text-black transition' href="#faq" onClick={handleToggle}>FAQs</a></li>
+          <li><a className='font-poppins text-lg text-[#6a6a70] hover:text-black transition' href="#contact" onClick={handleToggle}>Contact us</a></li>
+        </ul>
+      </div>
     </nav>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;

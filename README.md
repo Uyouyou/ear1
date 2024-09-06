@@ -22,4 +22,4 @@ This project was built using:
 + React Icons: A library of icons for React applications.
 
 ## View the Project
-Check out the live project [earl](https://ear1-network.netlify.app/)
+Check out the live project [earl](https://ear1-tech.netlify.app/)
